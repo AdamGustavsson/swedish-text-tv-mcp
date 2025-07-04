@@ -1,0 +1,48 @@
+{
+  "// Production configuration": "Use the compiled JavaScript",
+  "mcpServers": {
+    "swedish-text-tv": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "cwd": "/path/to/your/swedish-text-tv-mcp",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+
+  "// Development configuration": "Use tsx for TypeScript development",
+  "mcpServers_dev": {
+    "swedish-text-tv": {
+      "command": "npx",
+      "args": ["tsx", "src/index.ts"],
+      "cwd": "/path/to/your/swedish-text-tv-mcp",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  },
+
+  "// Alternative using npm script": "Use the dev script defined in package.json",
+  "mcpServers_npm": {
+    "swedish-text-tv": {
+      "command": "npm",
+      "args": ["run", "dev"],
+      "cwd": "/path/to/your/swedish-text-tv-mcp"
+    }
+  },
+
+  "// With custom API configuration": "You can also pass environment variables",
+  "mcpServers_custom": {
+    "swedish-text-tv": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "cwd": "/path/to/your/swedish-text-tv-mcp",
+      "env": {
+        "NODE_ENV": "production",
+        "TEXTTV_BASE_URL": "https://texttv.nu/api",
+        "TEXTTV_APP_ID": "my-custom-app-id"
+      }
+    }
+  }
+} 
